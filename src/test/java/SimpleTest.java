@@ -17,6 +17,8 @@ public class SimpleTest extends BaseTest {
         String expectedText = "Logind";
 
 
+
+
         SimpleActions simpleActions = new SimpleActions(driver);
         String loginText = simpleActions.getLoginText();
 
