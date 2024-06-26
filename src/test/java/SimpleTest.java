@@ -14,7 +14,7 @@ public class SimpleTest extends BaseTest {
 
         driver.get("http://apptest.go.ro:9999/login");
 
-        String expectedText = "Logind";
+        String expectedText = "Login";
 
 
         SimpleActions simpleActions = new SimpleActions(driver);
