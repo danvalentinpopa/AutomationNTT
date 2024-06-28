@@ -31,6 +31,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         screenshotUtils = new ScreenshotUtils(driver);
+        driver.get("http://apptest.go.ro:9999/login");
 
         if (extentReports == null) { //aici este modificare
             extentReports = new ExtentReports();

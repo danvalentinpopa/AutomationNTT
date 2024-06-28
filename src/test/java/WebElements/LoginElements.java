@@ -28,4 +28,8 @@ public class LoginElements {
     public WebElement submitButton(){
         return driver.findElement(By.cssSelector("#submitButton"));
     }
+
+    public WebElement errorForbiddenAccess(){
+        return driver.findElement(By.cssSelector("#errorForbiddenAccess"));
+    }
 }

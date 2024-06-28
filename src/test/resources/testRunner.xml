@@ -7,9 +7,21 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Register User">
+<!--    <test name="Register User">-->
+<!--        <classes>-->
+<!--            <class name="tests.RegisterUser"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Login Trainer">-->
+<!--        <classes>-->
+<!--            <class name="tests.LoginTrainer"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Login Trainer">
         <classes>
-            <class name="tests.RegisterUser"/>
+            <class name="tests.TrainingProgram"/>
         </classes>
     </test>
 </suite>
