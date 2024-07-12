@@ -38,6 +38,7 @@ public class CalendarTest extends BaseTest {
         dashboard.clickSpecificDay(configLoaderDate.getProperty("date"));
 
 
+
         dashboard.sendEventText(configLoaderDate.getProperty("eventText"));
         dashboard.clickCreateEventButton();
 
