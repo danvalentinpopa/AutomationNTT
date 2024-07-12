@@ -2,6 +2,7 @@ package Actions;
 
 import WebElements.DashboardElements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,4 +26,31 @@ public class Dashboard {
         wait.until(d -> elements.trainingButton().isDisplayed());
         elements.trainingButton().click();
     }
+
+    public void clickSpecificDay(String date){
+        for (WebElement element : elements.calendarDays()){
+            if (element.getAttribute("data-date").equals(date)){
+                element.click();
+            }
+        }
+    }
+
+    public void sendEventText(String eventText){
+        wait.until(d -> elements.eventTitle().isDisplayed());
+        elements.eventTitle().sendKeys(eventText);
+    }
+
+    public void clickCreateEventButton(){
+        elements.createEventButton().click();
+    }
+
+    public boolean isEventPresent(String event){
+        for (WebElement element : elements.events()){
+            if (element.getText().equalsIgnoreCase(event)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

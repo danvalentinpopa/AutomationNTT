@@ -22,6 +22,7 @@ public class Login {
     }
 
     public void enterUserName(String userEmail) {
+        wait.until(d -> element.userEmail().isDisplayed());
         element.userEmail().sendKeys(userEmail);
     }
 

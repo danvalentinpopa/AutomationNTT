@@ -5,12 +5,11 @@ import Actions.Login;
 import Actions.Register;
 import Actions.Training;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utile.BaseTest;
 import utile.ConfigLoader;
 
-public class TrainingProgram extends BaseTest {
+public class CalendarTest extends BaseTest {
 
     private Login login = null;
     private Dashboard dashboard = null;
@@ -20,14 +19,8 @@ public class TrainingProgram extends BaseTest {
     private String parola = "";
 
 
-    @BeforeTest
-    public void setup() {
-
-
-    }
-
     @Test
-    public void openTrainingTab() {
+    public void openDashboard() {
 
         initTest("Training program");
         login = new Login(driver);
@@ -36,26 +29,19 @@ public class TrainingProgram extends BaseTest {
         register = new Register(driver);
 
         ConfigLoader configLoader = new ConfigLoader("src/test/resources/propietati/dateUserPopDan.properties");
+        ConfigLoader configLoaderDate = new ConfigLoader("src/test/resources/propietati/dateData.properties");
 
         email = configLoader.getProperty("email");
         parola = configLoader.getProperty("parola");
-
-
         login();
 
-        dashboard.clickTrainingButton();
-
-        training.clickGenerateProgramButton();
+        dashboard.clickSpecificDay(configLoaderDate.getProperty("date"));
 
 
-        training.dragAndDropTrainingProgram(configLoader.getProperty("weekDay"),
-                configLoader.getProperty("trainingProgram"));
+        dashboard.sendEventText(configLoaderDate.getProperty("eventText"));
+        dashboard.clickCreateEventButton();
 
-
-        Assert.assertTrue(training.trainingProgramOnWeekday(configLoader.getProperty("weekDay"),"legs").
-                equalsIgnoreCase("legs"));
-
-
+        Assert.assertTrue(dashboard.isEventPresent(configLoaderDate.getProperty("eventText")));
 
     }
 
@@ -78,4 +64,5 @@ public class TrainingProgram extends BaseTest {
         login.enterPassword(parola);
         login.clickSubmitButton();
     }
+
 }

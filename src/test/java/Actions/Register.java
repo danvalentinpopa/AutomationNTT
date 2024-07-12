@@ -63,7 +63,7 @@ public class Register {
 
     public void registerUser(boolean isTrainer) {
 
-        ConfigLoader configLoader = new ConfigLoader("src/test/resources/propietati/dateUser1.properties");
+        ConfigLoader configLoader = new ConfigLoader("src/test/resources/propietati/dateUserPopDan.properties");
         String firstName = configLoader.getProperty("firstName");
         String lastName = configLoader.getProperty("lastName");
         String numarTelefon = configLoader.getProperty("numarTelefon");
