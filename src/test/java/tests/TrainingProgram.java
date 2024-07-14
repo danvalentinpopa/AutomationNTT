@@ -65,7 +65,7 @@ public class TrainingProgram extends BaseTest {
 
         if (login.errorForbiddenAccessText()) {
             login.clickRegisterButton();
-            register.registerUser(true);
+//            register.registerUser(true);
 
             loginActions(email, parola);
         }

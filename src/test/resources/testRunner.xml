@@ -25,9 +25,15 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Calendar Actions">
-        <classes>
-            <class name="tests.CalendarTest"/>
-        </classes>
+<!--    <test name="Calendar Actions">-->
+<!--        <classes>-->
+<!--            <class name="tests.CalendarTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="CucumberTests">
+    <classes>
+        <class name="runner.TestRunner" />
+    </classes>
     </test>
 </suite>
