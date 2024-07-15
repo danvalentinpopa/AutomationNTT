@@ -51,7 +51,7 @@ public class CalendarTest extends BaseTest {
 
         if (login.errorForbiddenAccessText()) {
             login.clickRegisterButton();
-            register.registerUser(true);
+            register.registerUser(true, null, null, null);
 
             loginActions(email, parola);
         }

@@ -37,7 +37,7 @@ public class LoginTrainer extends BaseTest {
 
         if (login.errorForbiddenAccessText()){
             login.clickRegisterButton();
-            register.registerUser(true);
+            register.registerUser(true, null, null, null);
         }
         Assert.assertTrue(dashboard.getUserEmailFromDashBoard().equalsIgnoreCase(email));
     }
