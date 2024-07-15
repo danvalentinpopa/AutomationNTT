@@ -61,23 +61,23 @@ public class Register {
     }
 
 
-    public void registerUser(boolean isTrainer) {
+    public void registerUser(boolean isTrainer, String email, String password, String phoneNumber) {
 
         ConfigLoader configLoader = new ConfigLoader("src/test/resources/propietati/dateUserPopDan.properties");
         String firstName = configLoader.getProperty("firstName");
         String lastName = configLoader.getProperty("lastName");
-        String numarTelefon = configLoader.getProperty("numarTelefon");
-        String email = configLoader.getProperty("email");
+//        String numarTelefon = configLoader.getProperty("numarTelefon");
+//        String email = configLoader.getProperty("email");
         String city = configLoader.getProperty("city");
-        String parola = configLoader.getProperty("parola");
+//        String parola = configLoader.getProperty("parola");
 
 
         setFirstname(firstName);
         setLastname(lastName);
-        setPhoneNumber(numarTelefon);
+        setPhoneNumber(phoneNumber);
         setEmail(email);
         city(city);
-        password(parola);
+        password(password);
         if (isTrainer) {
             trainer();
         } else {

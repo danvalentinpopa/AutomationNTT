@@ -14,11 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class BaseTest {
 
     public WebDriver driver;
@@ -30,6 +25,7 @@ public class BaseTest {
     public void setupClass() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         screenshotUtils = new ScreenshotUtils(driver);
         driver.get("http://apptest.go.ro:9999/login");
 
